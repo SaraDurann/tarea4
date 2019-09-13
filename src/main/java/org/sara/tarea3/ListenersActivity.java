@@ -33,18 +33,22 @@ public class ListenersActivity extends AppCompatActivity {
         textView = findViewById(R.id.userAge);
         textView.setTextSize(36);
         textView.setTextColor(ContextCompat.getColor(this, R.color.colorBlack));
-        button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textView.setText("HOLA MUNDO!!!");
-            }
-        });
+
+
         aSwitch = findViewById(R.id.switch1);
         aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                textView.setText("Switch status: " + b);
+                if(b==true){
+                    button = findViewById(R.id.button);
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            textView.setText("HOLA MUNDO!!!");
+                        }
+                    });
+                }
+               // textView.setText("Switch status: " + b);
 
             }
         });
